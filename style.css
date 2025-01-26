@@ -7,23 +7,20 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    background-color: #f0f4f8;
     color: #333;
-    line-height: 1.6;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px 40px;
-    background-color: #333;
+    background-color: #2193b0;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header .logo h1 {
-    font-size: 1.8em;
+header h1 {
+    font-size: 2em;
     letter-spacing: 2px;
 }
 
@@ -40,148 +37,94 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2em;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #f39c12;
 }
 
 main {
     padding: 40px 10%;
+}
+
+.intro {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .intro h2 {
     font-size: 2.5em;
-    margin-bottom: 20px;
 }
 
-.intro p {
+.print-options, .upload-section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.print-options h3, .upload-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
     font-size: 1.2em;
-    color: #666;
+    margin-bottom: 8px;
 }
 
-/* Scanning Animation - Top to Bottom */
-@keyframes scanning {
+select, input[type="number"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+h4 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Robo Animation */
+.robot {
+    position: fixed;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: robotAnimation 4s ease-in-out forwards;
+}
+
+@keyframes robotAnimation {
     0% {
-        top: -50%;
+        bottom: -200px;
         opacity: 0;
     }
     50% {
-        top: 50%;
+        bottom: 100px;
         opacity: 1;
     }
     100% {
-        top: 150%;
-        opacity: 0;
-    }
-}
-
-.scan-line {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #ff6347;
-    animation: scanning 1.5s linear forwards;
-    pointer-events: none;
-    opacity: 0;
-}
-
-/* File Upload Area */
-.upload-section {
-    position: relative;
-    display: inline-block;
-    padding: 30px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.upload-section button {
-    background-color: #ff6347;
-    transition: background-color 0.3s;
-    font-size: 1.2em;
-    padding: 15px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-}
-
-.upload-section button:hover {
-    background-color: #e55347;
-    transform: scale(1.05);
-}
-
-/* Fade In Effect */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
+        bottom: 0;
         opacity: 1;
     }
 }
 
-section {
-    animation: fadeIn 1s ease-in;
-}
-
-/* Button ripple effect */
-button {
-    position: relative;
-    overflow: hidden;
-}
-
-button::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-}
-
-@keyframes ripple {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2193b0;
+    color: white;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
+    main {
         padding: 20px;
     }
 
-    nav ul {
+    header {
         flex-direction: column;
-        margin-top: 20px;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    button {
-        width: 100%;
-        font-size: 1.2em;
-    }
-
-    main {
-        padding: 20px 5%;
+        text-align: center;
     }
 }
