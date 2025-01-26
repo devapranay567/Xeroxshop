@@ -1,108 +1,187 @@
 /* General Styles */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    color: #333;
+    line-height: 1.6;
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
     background-color: #333;
     color: white;
-    text-align: center;
-    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    margin: 0;
+header .logo h1 {
+    font-size: 1.8em;
+    letter-spacing: 2px;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 15px;
+    margin-left: 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 1.2em;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
 }
 
 main {
-    padding: 20px;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Scanning Animation - Top to Bottom */
+@keyframes scanning {
+    0% {
+        top: -50%;
+        opacity: 0;
+    }
+    50% {
+        top: 50%;
+        opacity: 1;
+    }
+    100% {
+        top: 150%;
+        opacity: 0;
+    }
+}
+
+.scan-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff6347;
+    animation: scanning 1.5s linear forwards;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* File Upload Area */
+.upload-section {
+    position: relative;
+    display: inline-block;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section button {
+    background-color: #ff6347;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.upload-section button:hover {
+    background-color: #e55347;
+    transform: scale(1.05);
+}
+
+/* Fade In Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 section {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
 }
 
+/* Button ripple effect */
 button {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-button:hover {
-    background-color: #555;
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
 }
 
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: white;
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
-        padding: 15px 0;
-    }
-
-    nav ul li {
-        display: block;
-        margin-right: 0;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
     }
 
     nav ul {
-        text-align: center;
+        flex-direction: column;
+        margin-top: 20px;
     }
 
-    section {
-        margin: 10px 0;
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
     }
 
     button {
         width: 100%;
-        padding: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        font-size: 16px;
+        font-size: 1.2em;
     }
 
-    button {
-        padding: 12px;
-        font-size: 14px;
-    }
-
-    footer p {
-        font-size: 12px;
+    main {
+        padding: 20px 5%;
     }
 }
