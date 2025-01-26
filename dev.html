@@ -1,45 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> SS Xerox Shop</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Printing for Students</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to SS Xerox Shop</h1>
-    <p>Upload your PDFs, make payments, and confirm your order!</p>
-  </header>
-  
-  <main>
-    <section>
-      <h2>Step 1: Upload Your File</h2>
-      <form action="https://formspree.io/f/your-email" method="POST" enctype="multipart/form-data">
-        <input type="file" name="pdf" accept=".pdf" required>
-        <button type="submit">Upload</button>
-      </form>
-    </section>
-    
-    <section>
-      <h2>Step 2: Make a Payment</h2>
-      <p>Scan the QR code below to pay:</p>
-      <img src="qr-code.png" alt="UPI QR Code" style="width: 200px;">
-      <p>Or send payment to <strong>+91 9959397220</strong>.</p>
-    </section>
-    
-    <section>
-      <h2>Step 3: Confirm Payment</h2>
-      <form action="https://formspree.io/f/your-email" method="POST">
-        <label for="screenshot">Upload Payment Screenshot:</label>
-        <input type="file" name="screenshot" accept="image/*" required>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-  </main>
-  
-  <footer>
-    <p>Contact us: +91 9959397220 | Address: Your Shop Address</p>
-  </footer>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="C:\Users\devap\Downloads\5189-183786475.mp4"type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        <!-- Logo and Navigation -->
+        <header>
+            <div class="logo">Easy Print</div>
+            <nav>
+                <a href="#home" class="home-btn">Home</a>
+            </nav>
+        </header>
+
+        <!-- Title and Description -->
+        <h1>Online Printing Service</h1>
+        <p>Estimate and pay for your printing services online. Easy, fast, and efficient!</p>
+        
+        <!-- Form for Printing Options -->
+        <div class="form-group">
+            <label for="pages">Number of Pages:</label>
+            <input type="number" id="pages" placeholder="Enter number of pages" value="1">
+        </div>
+        
+        <div class="form-group">
+            <label for="color">Color (Black & White or Color):</label>
+            <select id="color">
+                <option value="black-and-white">Black & White</option>
+                <option value="color">Color</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="copies">Number of Copies:</label>
+            <input type="number" id="copies" placeholder="Enter number of copies" value="1">
+        </div>
+
+        <div class="form-group">
+            <label for="side">Side Printing:</label>
+            <select id="side">
+                <option value="single">Single Side</option>
+                <option value="double">Double Side</option>
+            </select>
+        </div>
+
+        <!-- Display Estimated Amount -->
+        <div>
+            <p>Estimated Cost: <span id="estimatedAmount">0</span> INR</p>
+        </div>
+
+        <!-- Generate QR Button -->
+        <button onclick="generateQRCode()" class="btn">Generate Payment QR</button>
+
+        <!-- QR Code Container -->
+        <div id="qr-code"></div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Easy Print | Website created by Your Name</p>
+        <p>Contact: surendranagukante@gmail.com | Phone: +919398844572,9959397220</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        AOS.init();  // Initialize AOS (Animate On Scroll)
+    </script>
 </body>
 </html>
