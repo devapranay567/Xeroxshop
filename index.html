@@ -3,50 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Printing Service</title>
+    <title>Easy Printing for Students</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 <body>
-    <header>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="C:\Users\devap\Downloads\5189-183786475.mp4"type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        <!-- Logo and Navigation -->
+        <header>
+            <div class="logo">Easy Print</div>
+            <nav>
+                <a href="#home" class="home-btn">Home</a>
+            </nav>
+        </header>
+
+        <!-- Title and Description -->
         <h1>Online Printing Service</h1>
-    </header>
-
-    <main>
-        <section class="intro">
-            <p>Welcome to our online printing service. Simply select your options and get a QR code for payment!</p>
-        </section>
-
-        <section class="form-section">
-            <h3>Print Options</h3>
+        <p>Estimate and pay for your printing services online. Easy, fast, and efficient!</p>
+        
+        <!-- Form for Printing Options -->
+        <div class="form-group">
             <label for="pages">Number of Pages:</label>
-            <input type="number" id="pages" placeholder="Enter the number of pages" required>
-
-            <label for="color">Color or Black & White:</label>
+            <input type="number" id="pages" placeholder="Enter number of pages" value="1">
+        </div>
+        
+        <div class="form-group">
+            <label for="color">Color (Black & White or Color):</label>
             <select id="color">
-                <option value="black-white">Black & White</option>
+                <option value="black-and-white">Black & White</option>
                 <option value="color">Color</option>
             </select>
+        </div>
 
+        <div class="form-group">
             <label for="copies">Number of Copies:</label>
-            <input type="number" id="copies" placeholder="Enter number of copies" required>
+            <input type="number" id="copies" placeholder="Enter number of copies" value="1">
+        </div>
 
-            <button onclick="calculatePrice()">Calculate Price</button>
+        <div class="form-group">
+            <label for="side">Side Printing:</label>
+            <select id="side">
+                <option value="single">Single Side</option>
+                <option value="double">Double Side</option>
+            </select>
+        </div>
 
-            <div id="price-estimation"></div>
-        </section>
+        <!-- Display Estimated Amount -->
+        <div>
+            <p>Estimated Cost: <span id="estimatedAmount">0</span> INR</p>
+        </div>
 
-        <section class="qr-section">
-            <h3>Generate Payment QR Code</h3>
-            <button onclick="generateQRCode()">Generate QR</button>
-            <div id="qr-code"></div>
-        </section>
-    </main>
+        <!-- Generate QR Button -->
+        <button onclick="generateQRCode()" class="btn">Generate Payment QR</button>
 
+        <!-- QR Code Container -->
+        <div id="qr-code"></div>
+    </div>
+
+    <!-- Footer Section -->
     <footer>
-        <p>Contact us for any queries.</p>
+        <p>&copy; 2025 Easy Print | Website created by Your Name</p>
+        <p>Contact: surendranagukante@gmail.com | Phone: +919398844572,9959397220</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/qrcode"></script> <!-- QR Code library -->
     <script src="script.js"></script>
+    <script>
+        AOS.init();  // Initialize AOS (Animate On Scroll)
+    </script>
 </body>
 </html>
