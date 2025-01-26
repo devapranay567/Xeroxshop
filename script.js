@@ -8,7 +8,7 @@ function calculatePrice() {
         if (color === 'color') {
             pricePerPage = 10;
         } else {
-            pricePerPage = 3;
+            pricePerPage = 2;
         }
     } else {
         if (color === 'color') {
