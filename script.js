@@ -9,17 +9,9 @@ function calculateEstimatedCost() {
 
     // Determine cost per page based on color and total page count
     if (color === 'black-and-white') {
-        if (totalPageCount <= 10) {
-            costPerPage = 3;
-        } else {
-            costPerPage = 2;
-        }
+        costPerPage = totalPageCount <= 10 ? 3 : 2;
     } else if (color === 'color') {
-        if (totalPageCount <= 10) {
-            costPerPage = 10;
-        } else {
-            costPerPage = 7;
-        }
+        costPerPage = totalPageCount <= 10 ? 10 : 7;
     }
 
     // Calculate total cost
@@ -41,7 +33,7 @@ function generateQRCode() {
     document.getElementById("estimatedAmount").innerText = `Estimated Cost: ₹${estimatedAmount}`;
 
     // Set the image of the UPI QR code
-    const qrCodeImage = "upi srinu.jpg"; // Replace with your QR code image path
+    const qrCodeImage = "images/upi_srinu.jpg"; // Update with the correct path
 
     // Clear previous QR code (if any)
     const qrCodeContainer = document.getElementById("qr-code");
