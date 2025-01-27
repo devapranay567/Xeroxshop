@@ -5,26 +5,29 @@ function calculateEstimatedCost() {
     const side = document.getElementById('side').value;
 
     let costPerPage = 0;
-    const totalPages = pages * copies;
+    const totalPageCount = pages + copies;
 
+    // Determine cost per page based on color and total page count
     if (color === 'black-and-white') {
-        if (totalPages <= 10) {
+        if (totalPageCount <= 10) {
             costPerPage = 3;
         } else {
             costPerPage = 2;
         }
     } else if (color === 'color') {
-        if (pages <= 10) {
+        if (totalPageCount <= 10) {
             costPerPage = 10;
         } else {
             costPerPage = 7;
         }
     }
 
-    let totalCost = costPerPage * totalPages;
+    // Calculate total cost
+    let totalCost = costPerPage * pages * copies;
 
+    // Adjust for double-sided printing
     if (side === 'double') {
-        totalCost *= 2; // Double-sided increases the cost
+        totalCost *= 2;
     }
 
     return totalCost;
