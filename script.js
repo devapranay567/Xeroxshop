@@ -33,7 +33,7 @@ function generateQRCode() {
     document.getElementById("estimatedAmount").innerText = `Estimated Cost: ₹${estimatedAmount.toFixed(2)}`;
 
     // Set the image of the UPI QR code
-    const qrCodeImage = "upi_srinu.jpg"; // Update with the correct path
+    const qrCodeImage = "upi srinu.jpg"; // Update with the correct path
 
     // Clear previous QR code (if any)
     const qrCodeContainer = document.getElementById("qr-code");
