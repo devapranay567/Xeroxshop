@@ -5,17 +5,17 @@ function calculateEstimatedCost() {
     const side = document.getElementById('side').value;
 
     let costPerPage = 0;
-    const totalPageCount = pages + copies;
+    const totalPageCount = pages * copies; // Calculate the total number of pages across all copies
 
     // Determine cost per page based on color and total page count
     if (color === 'black-and-white') {
-        costPerPage = totalPageCount <= 10 ? 3 : 2;
+        costPerPage = totalPageCount < 10 ? 3 : 2.5;
     } else if (color === 'color') {
-        costPerPage = totalPageCount <= 10 ? 10 : 7;
+        costPerPage = totalPageCount < 10 ? 10 : 7;
     }
 
     // Calculate total cost
-    let totalCost = costPerPage * pages * copies;
+    let totalCost = costPerPage * totalPageCount;
 
     // Adjust for double-sided printing
     if (side === 'double') {
@@ -30,10 +30,10 @@ function generateQRCode() {
     const estimatedAmount = calculateEstimatedCost();
 
     // Display the estimated cost on the page
-    document.getElementById("estimatedAmount").innerText = `Estimated Cost: ₹${estimatedAmount}`;
+    document.getElementById("estimatedAmount").innerText = `Estimated Cost: ₹${estimatedAmount.toFixed(2)}`;
 
     // Set the image of the UPI QR code
-    const qrCodeImage = "upi srinu.jpg"; // Update with the correct path
+    const qrCodeImage = "upi_srinu.jpg"; // Update with the correct path
 
     // Clear previous QR code (if any)
     const qrCodeContainer = document.getElementById("qr-code");
