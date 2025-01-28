@@ -1,0 +1,15 @@
+{
+  "name": "easy-print",
+  "version": "1.0.0",
+  "description": "Online Printing Service",
+  "main": "index.html",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "multer": "^1.4.5-lts.1",
+    "next": "latest"
+  }
+}
