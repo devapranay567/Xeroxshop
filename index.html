@@ -67,24 +67,28 @@
         <!-- QR Code Container -->
         <div id="qr-code"></div>
 
-        <!-- Embed Google Form -->
-        <div class="form-container">
-            <h2>Submit Your Documents and Payment Screenshot</h2>
-            <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSeCrtAzysoalrw4sHoDFCmZuu_Kx2j7mkNVILTrVhY2PWb8xw/viewform?usp=header" 
-                width="100%" 
-                height="1000" 
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0">
-            </iframe>
+        <!-- Buttons for Uploading Screenshot and PDF -->
+        <div class="form-group">
+            <label for="screenshot-upload">Upload Screenshot:</label>
+            <input type="file" id="screenshot-upload" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="pdf-upload">Upload PDF/Document:</label>
+            <input type="file" id="pdf-upload" accept=".pdf,.doc,.docx">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="btn" id="submit-btn">Submit</button>
         </div>
     </div>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Easy Print | Website created by Deva Pranay</p>
-        <p>Contact: surendranagukante@gmail.com | Phone: +919398844572, 9959397220</p>
+        <p>&copy; 2025 Easy Print |<p>
+        </p> Website created by Deva pranay</p>
+        <p>Contact: surendranagukante@gmail.com | Phone: +919398844572,9959397220</p>
     </footer>
 
     <script src="script.js"></script>
