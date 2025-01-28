@@ -97,102 +97,11 @@
     </script>
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Printing for Students</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-</head>
-<body>
-    <!-- Background Video -->
-    <video autoplay muted loop id="background-video">
-        <source src="26344-357839084_medium.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
-    <!-- Main Content Area -->
-    <div class="container">
-        <!-- Logo and Navigation -->
-        <header>
-            <div class="logo">SS PRINTS</div>
-            <nav>
-                <a href="#home" class="home-btn">Home</a>
-            </nav>
-        </header>
 
-        <!-- Title and Description -->
-        <h1>Online Printing Service</h1>
-        <p>Estimate and pay for your printing services online. Easy, fast, and efficient!</p>
-        
-        <!-- Form for Printing Options -->
-        <div class="form-group">
-            <label for="pages">Number of Pages:</label>
-            <input type="number" id="pages" placeholder="Enter number of pages" value="1">
-        </div>
-        
-        <div class="form-group">
-            <label for="color">Color (Black & White or Color):</label>
-            <select id="color">
-                <option value="black-and-white">Black & White</option>
-                <option value="color">Color</option>
-            </select>
-        </div>
+   
+  
 
-        <div class="form-group">
-            <label for="copies">Number of Copies:</label>
-            <input type="number" id="copies" placeholder="Enter number of copies" value="1">
-        </div>
-
-        <div class="form-group">
-            <label for="side">Side Printing:</label>
-            <select id="side">
-                <option value="single">Single Side</option>
-                <option value="double">Double Side</option>
-            </select>
-        </div>
-
-        <!-- Display Estimated Amount -->
-        <div>
-            <p>Estimated Cost: <span id="estimatedAmount">0</span> INR</p>
-        </div>
-
-        <!-- Generate QR Button -->
-        <button onclick="generateQRCode()" class="btn">Generate Payment QR</button>
-
-        <!-- QR Code Container -->
-        <div id="qr-code"></div>
-
-        <!-- Buttons for Uploading Screenshot and PDF -->
-        <div class="form-group">
-            <label for="screenshot-upload">Upload Screenshot:</label>
-            <input type="file" id="screenshot-upload" accept="image/*">
-        </div>
-
-        <div class="form-group">
-            <label for="pdf-upload">Upload PDF/Document:</label>
-            <input type="file" id="pdf-upload" accept=".pdf,.doc,.docx">
-        </div>
-
-        <!-- Submit Button -->
-        <div class="form-group">
-            <button type="submit" class="btn" id="submit-btn">Submit</button>
-        </div>
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Easy Print |<p>
-        </p> Website created by Deva pranay</p>
-        <p>Contact: surendranagukante@gmail.com | Phone: +919398844572,9959397220</p>
-    </footer>
-
-    <script src="script.js"></script>
-    <script>
         AOS.init();  // Initialize AOS (Animate On Scroll)
     </script>
 </body>
